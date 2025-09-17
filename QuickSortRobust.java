@@ -1,4 +1,4 @@
-package SDP;
+package DAA;
 import java.util.Random;
 
 public class QuickSortRobust {
