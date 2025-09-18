@@ -4,7 +4,6 @@ public class DeterministicSelect {
 
     private static final int GROUP_SIZE = 5; // constant group size
 
-    // k is 1-based: 1 = smallest element, n = largest element
     public static int select(int[] arr, int k) {
         if (k < 1 || k > arr.length)
             throw new IllegalArgumentException("k out of bounds");
