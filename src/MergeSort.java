@@ -1,12 +1,12 @@
 public class MergeSort {
 
     public static void sort(int[] array) {
-        int[] buffer = new int[array.length]; // один буфер
+        int[] buffer = new int[array.length];
         mergeSort(array, buffer, 0, array.length - 1);
     }
 
     private static void mergeSort(int[] array, int[] buffer, int left, int right) {
-        if (right - left < 20) { // cut-off для маленьких массивов
+        if (right - left < 20) {
             insertionSort(array, left, right);
             return;
         }
