@@ -12,7 +12,12 @@ public class Main {
         System.out.println();
 
         //MERGE SORT
+        System.out.println("--- Correctness Test for MergeSort ---");
 
+        int[] arr2 = {15, 7, 20, 3, 9, 18, 1, 5, 12, 30};
+        System.out.println("Original Array: " + Arrays.toString(arr2));
+        MergeSort.sort(arr2);
+        System.out.println("Sorted Array:   " + Arrays.toString(arr2));
         System.out.println();
 
         //DETERMINISTIC SELECT
