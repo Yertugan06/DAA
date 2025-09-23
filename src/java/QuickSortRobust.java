@@ -1,14 +1,20 @@
+package java;
+
 import java.util.Random;
 
 public class QuickSortRobust {
     private static final Random rand = new Random();
+    private static int maxDepth;  // track maximum recursion depth
 
     public static void quickSort(int[] arr) {
-        quickSort(arr, 0, arr.length - 1);
+        maxDepth = 0; // reset before each sort
+        quickSort(arr, 0, arr.length - 1, 1); // start depth = 1
     }
 
-    private static void quickSort(int[] arr, int low, int high) {
+    private static void quickSort(int[] arr, int low, int high, int depth) {
         while (low < high) {
+            maxDepth = Math.max(maxDepth, depth); // record depth
+
             // Randomized pivot selection
             int pivotIndex = low + rand.nextInt(high - low + 1);
             int pivot = arr[pivotIndex];
@@ -28,14 +34,14 @@ public class QuickSortRobust {
             // Recurse on the smaller partition
             if (j - low < high - i) {
                 if (low < j) {
-                    quickSort(arr, low, j);
+                    quickSort(arr, low, j, depth + 1);
                 }
-                low = i; // Tail recursion on the larger side
+                low = i; // tail recursion on the larger side
             } else {
                 if (i < high) {
-                    quickSort(arr, i, high);
+                    quickSort(arr, i, high, depth + 1);
                 }
-                high = j; // Tail recursion on the larger side
+                high = j; // tail recursion on the larger side
             }
         }
     }
@@ -45,7 +51,9 @@ public class QuickSortRobust {
         arr[i] = arr[j];
         arr[j] = tmp;
     }
+
+    // ✅ Public accessor for max recursion depth
+    public static int getMaxDepth() {
+        return maxDepth;
+    }
 }
-
-
-

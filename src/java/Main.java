@@ -1,3 +1,5 @@
+package java;
+
 import java.util.Arrays;
 
 public class Main {
@@ -12,7 +14,7 @@ public class Main {
         System.out.println();
 
         //MERGE SORT
-        System.out.println("--- Correctness Test for MergeSort ---");
+        System.out.println("--- Correctness Test for java.MergeSort ---");
 
         int[] arr2 = {15, 7, 20, 3, 9, 18, 1, 5, 12, 30};
         System.out.println("Original Array: " + Arrays.toString(arr2));
@@ -22,7 +24,7 @@ public class Main {
 
         //DETERMINISTIC SELECT
 
-        System.out.println("--- Correctness Test for DeterministicSelect ---");
+        System.out.println("--- Correctness Test for java.DeterministicSelect ---");
         int[] arr1 = {9, 3, 2, 7, 6, 1, 5, 8, 4, 10, 12, 11};
         int k = 6;
         int val = DeterministicSelect.select(arr1, k);
