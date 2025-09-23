@@ -98,3 +98,4 @@ public class ClosestPairOfPoint2D {
                 ") and (" + res.p2.getX() + ", " + res.p2.getY() + ")");
     }
 }
+
